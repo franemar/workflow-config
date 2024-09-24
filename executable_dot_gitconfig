@@ -44,3 +44,7 @@
   unmerged = magenta bold reverse
   untracked = red
   updated = green bold
+
+[user]
+-	email = franklin.e.marin@gmail.com
+-	name = Franemar
