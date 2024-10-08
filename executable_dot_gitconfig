@@ -47,3 +47,4 @@
 
 [user]
   email = franklin.e.marin@gmail.com
+  defaultBranch = main
