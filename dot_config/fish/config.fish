@@ -153,9 +153,9 @@ alias mirrord 'sudo reflector --latest 50 --number 20 --sort delay --save /etc/p
 alias mirrors 'sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist'
 
 # Help people new to Arch
-alias apt 'man pacman'
-alias apt-get 'man pacman'
-alias please sudo
+# alias apt 'man pacman'
+# alias apt-get 'man pacman'
+# alias please sudo
 alias tb 'nc termbin.com 9999'
 alias helpme 'echo "To print basic information about a command use tldr <command>"'
 alias pacdiff 'sudo -H DIFFPROG=meld pacdiff'
@@ -172,9 +172,16 @@ if status --is-interactive && type -q fastfetch
 end
 
 
+# Custom: not Garuda
 # Add ~/.cargo/bin to PATH
 if test -d ~/.cargo/bin
     if not contains -- ~/.cargo/bin $PATH
         set -p PATH ~/.cargo/bin
     end
 end
+
+# XDG
+set XDG_DATA_HOME $HOME/.local/share
+set XDG_CONFIG_HOME $HOME/.config
+set XDG_STATE_HOME $HOME/.local/state
+set XDG_CACHE_HOME $HOME/.cache
