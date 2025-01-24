@@ -13,3 +13,4 @@ local vim = vim
 -- vim.cmd('silent! colorscheme seoul256')
 
 require("config.lazy")
+vim.cmd("colorscheme vscode")

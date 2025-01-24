@@ -27,18 +27,45 @@ require("lazy").setup({
     -- import your plugins
     { "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
-      config = function () 
-        local configs = require("nvim-treesitter.configs")
 
+      config = function ()
+        local configs = require("nvim-treesitter.configs")
         configs.setup({
-            ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },  
-          })
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },
+        })
       end
+
     },
-    { "linuxcaffe/timedot-vim" }
+    { "nvim-treesitter/nvim-treesitter-context" },
+    { "franemar/timedot-vim" },
+    { "Mofiqul/vscode.nvim",
+      priority = 1000,
+      --[[ opts = {
+        color_overrides = {
+          vscBack = '#f8f8f8'
+        },
+      },
+      ]]
+    },
+    {
+      "scottmckendry/cyberdream.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = { theme = { variant = "auto" }}
+    },
+    {
+      "OXY2DEV/markview.nvim",
+      lazy = false,      -- Recommended
+      -- ft = "markdown" -- If you decide to lazy-load anyway
+
+      dependencies = {
+          "nvim-treesitter/nvim-treesitter",
+          "nvim-tree/nvim-web-devicons"
+      }
+    }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -46,3 +73,4 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
