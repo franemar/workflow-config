@@ -185,3 +185,6 @@ set XDG_DATA_HOME $HOME/.local/share
 set XDG_CONFIG_HOME $HOME/.config
 set XDG_STATE_HOME $HOME/.local/state
 set XDG_CACHE_HOME $HOME/.cache
+
+# Dotfiles management
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
