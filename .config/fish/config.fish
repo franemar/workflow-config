@@ -188,3 +188,5 @@ set XDG_CACHE_HOME $HOME/.cache
 
 # Dotfiles management
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias ledgerrepo='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/hledger/ --work-tree=$HOME/hledger'
+
