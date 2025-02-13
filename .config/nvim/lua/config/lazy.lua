@@ -54,7 +54,7 @@ require("lazy").setup({
       "scottmckendry/cyberdream.nvim",
       lazy = false,
       priority = 1000,
-      opts = { theme = { variant = "auto" }}
+      opts = { variant = "auto" }
     },
     {
       "OXY2DEV/markview.nvim",
