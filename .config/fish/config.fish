@@ -190,3 +190,7 @@ set XDG_CACHE_HOME $HOME/.cache
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias expenses='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/hledger/expenses --work-tree=$HOME/hledger/expenses'
 
+# Ruby gems
+set -gx GEM_HOME = "$HOME/.local/share/gem/ruby/"
+set -gx PATH "$HOME/.local/share/gem/ruby/3.3" $PATH
+
