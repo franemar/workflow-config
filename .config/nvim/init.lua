@@ -16,10 +16,11 @@ require("config.lazy")
 -- vim.cmd("colorscheme vscode")
 vim.cmd("colorscheme cyberdream")
 
-vim.lsp.config('tscriptls', {
-  on_attach = function()
-    print('TypeScript Language Server is now active in this file')
-  end,
-})
+--vim.lsp.config('tscriptls', {
+--  on_attach = function()
+--    print('TypeScript Language Server is now active in this file')
+--  end,
+--})
 
 --vim.lsp.enable('tscriptls')
+

@@ -188,9 +188,22 @@ set XDG_CACHE_HOME $HOME/.cache
 
 # Dotfiles management
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 alias expenses='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/hledger/expenses --work-tree=$HOME/hledger/expenses'
 
 # Ruby gems
 set -gx GEM_HOME = "$HOME/.local/share/gem/ruby/"
 set -gx PATH "$HOME/.local/share/gem/ruby/3.3" $PATH
 
+## Common Lisp (for Lem)
+if test -d ~/.roswell/bin
+    if not contains -- ~/.roswell/bin $PATH
+        set -p PATH ~/.roswell/bin
+    end
+end
+
+if test -d ~/.qlot/bin
+    if not contains -- ~/.qlot/bin $PATH
+        set -p PATH ~/.qlot/bin
+    end
+end

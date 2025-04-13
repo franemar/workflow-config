@@ -41,15 +41,15 @@ require("lazy").setup({
     },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "franemar/timedot-vim" },
-    { "Mofiqul/vscode.nvim",
-      priority = 1000,
-      --[[ opts = {
-        color_overrides = {
-          vscBack = '#f8f8f8'
-        },
-      },
-      ]]
-    },
+--    { "Mofiqul/vscode.nvim",
+--      priority = 1000,
+--      --[[ opts = {
+--        color_overrides = {
+ --         vscBack = '#f8f8f8'
+ --       },
+ --     },
+ --     ]]
+ --   },
     {
       "scottmckendry/cyberdream.nvim",
       lazy = false,
@@ -65,7 +65,33 @@ require("lazy").setup({
           "nvim-treesitter/nvim-treesitter",
           "nvim-tree/nvim-web-devicons"
       }
-    }
+   },
+   {
+     {
+       "Olical/conjure",
+       ft = { "clojure", "python" },
+       lazy = true,
+       init = function()
+         -- Set configuration options here
+         -- Uncomment this to get verbose logging to help diagnose internal Conjure issues
+         -- This is VERY helpful when reporting an issue with the project
+         -- vim.g["conjure#debug"] = true
+       end,
+
+       -- Optional cmp-conjure integration
+       --dependencies = { "PaterJason/cmp-conjure" },
+     },
+     --{
+     --  "PaterJason/cmp-conjure",
+     --  lazy = true,
+     --  config = function()
+    --   local cmp = require("cmp")
+       --  local config = cmp.get_config()
+        -- table.insert(config.sources, { name = "conjure" })
+       --  return cmp.setup(config)
+      -- end,
+     --},
+  },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
