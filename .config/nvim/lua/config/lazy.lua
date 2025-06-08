@@ -41,21 +41,21 @@ require("lazy").setup({
     },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "franemar/timedot-vim" },
---    { "Mofiqul/vscode.nvim",
---      priority = 1000,
---      --[[ opts = {
---        color_overrides = {
- --         vscBack = '#f8f8f8'
- --       },
- --     },
- --     ]]
- --   },
-    {
-      "scottmckendry/cyberdream.nvim",
-      lazy = false,
+    { "Mofiqul/vscode.nvim",
       priority = 1000,
-      opts = { variant = "auto" }
+      --[[ opts = {
+        color_overrides = {
+         vscBack = '#f8f8f8'
+        },
+      },
+      ]]
     },
+--    {
+--     "scottmckendry/cyberdream.nvim",
+--     lazy = false,
+--      priority = 1000,
+--      opts = { variant = "auto" }
+--    },
     {
       "OXY2DEV/markview.nvim",
       lazy = false,      -- Recommended

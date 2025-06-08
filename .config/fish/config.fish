@@ -8,7 +8,7 @@ set -x SHELL /usr/bin/fish
 
 ## Export variable need for qt-theme
 if type qtile >>/dev/null 2>&1
-    set -x QT_QPA_PLATFORMTHEME qt5ct
+    set -x QT_QPA_PLATFORMTHEME qt6ct
 end
 
 # Set settings for https://github.com/franciscolourenco/done
@@ -189,7 +189,7 @@ set XDG_CACHE_HOME $HOME/.cache
 # Dotfiles management
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-alias expenses='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/hledger/expenses --work-tree=$HOME/hledger/expenses'
+alias expenses='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/ledger/expenses --work-tree=$HOME/ledger/expenses'
 
 # Ruby gems
 set -gx GEM_HOME = "$HOME/.local/share/gem/ruby/"
