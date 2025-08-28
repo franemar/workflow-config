@@ -31,7 +31,7 @@ require("lazy").setup({
       config = function ()
         local configs = require("nvim-treesitter.configs")
         configs.setup({
-          ensure_installed = { "lua", "vim", "vimdoc", "query", "heex", "javascript", "html", "kotlin", "clojure" },
+          ensure_installed = { "lua", "vim", "vimdoc", "query", "heex", "javascript", "html", "kotlin" },
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },
@@ -50,12 +50,12 @@ require("lazy").setup({
       },
       ]]
     },
---    {
---     "scottmckendry/cyberdream.nvim",
---     lazy = false,
---      priority = 1000,
---      opts = { variant = "auto" }
---    },
+    {
+     "scottmckendry/cyberdream.nvim",
+     lazy = false,
+      priority = 1000,
+      opts = { variant = "auto" }
+    },
     {
       "OXY2DEV/markview.nvim",
       lazy = false,      -- Recommended
@@ -69,7 +69,7 @@ require("lazy").setup({
    {
      {
        "Olical/conjure",
-       ft = { "clojure", "python" },
+       ft = { "python" },
        lazy = true,
        init = function()
          -- Set configuration options here
