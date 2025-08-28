@@ -195,13 +195,6 @@ alias expenses='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/ledger/expen
 set -gx GEM_HOME = "$HOME/.local/share/gem/ruby/"
 set -gx PATH "$HOME/.local/share/gem/ruby/3.3" $PATH
 
-## Common Lisp (for Lem)
-if test -d ~/.roswell/bin
-    if not contains -- ~/.roswell/bin $PATH
-        set -p PATH ~/.roswell/bin
-    end
-end
-
 if test -d ~/.qlot/bin
     if not contains -- ~/.qlot/bin $PATH
         set -p PATH ~/.qlot/bin
