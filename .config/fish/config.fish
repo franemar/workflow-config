@@ -6,10 +6,10 @@ set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -xU MANROFFOPT -c
 set -x SHELL /usr/bin/fish
 
-## Export variable need for qt-theme
-if type qtile >>/dev/null 2>&1
-    set -x QT_QPA_PLATFORMTHEME qt6ct
-end
+### Export variable need for qt-theme
+#if type qtile >>/dev/null 2>&1
+#    set -x QT_QPA_PLATFORMTHEME qt6ct
+#end
 
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
@@ -39,12 +39,12 @@ end
 
 ## Starship prompt
 if status --is-interactive
-    source ("/usr/bin/starship" init fish --print-full-init | psub)
+    source ("starship" init fish --print-full-init | psub)
 end
 
 
-## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish
+### Advanced command-not-found hook
+# source /usr/share/doc/find-the-command/ftc.fish
 
 
 ## Functions
@@ -98,12 +98,12 @@ function copy
     end
 end
 
-# Cleanup local orphaned packages
-function cleanup
-    while pacman -Qdtq
-        sudo pacman -R (pacman -Qdtq)
-    end
-end
+## Cleanup local orphaned packages
+#function cleanup
+#    while pacman -Qdtq
+#        sudo pacman -R (pacman -Qdtq)
+#    end
+#end
 
 ## Useful aliases
 
@@ -129,8 +129,8 @@ alias ..... 'cd ../../../..'
 alias ...... 'cd ../../../../..'
 alias big 'expac -H M "%m\t%n" | sort -h | nl' # Sort installed packages according to size in MB (expac must be installed)
 alias dir 'dir --color=auto'
-alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
-alias gitpkg 'pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
+#alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
+#alias gitpkg 'pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
 alias grep 'ugrep --color=auto'
 alias egrep 'ugrep -E --color=auto'
 alias fgrep 'ugrep -F --color=auto'
@@ -139,23 +139,23 @@ alias hw 'hwinfo --short' # Hardware Info
 alias ip 'ip -color'
 alias psmem 'ps auxf | sort -nr -k 4'
 alias psmem10 'ps auxf | sort -nr -k 4 | head -10'
-alias rmpkg 'sudo pacman -Rdd'
+#alias rmpkg 'sudo pacman -Rdd'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
 alias upd /usr/bin/garuda-update
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
 
-# Get fastest mirrors
-alias mirror 'sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
-alias mirrora 'sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist'
-alias mirrord 'sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist'
-alias mirrors 'sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist'
+## Get fastest mirrors
+#alias mirror 'sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
+#alias mirrora 'sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist'
+#alias mirrord 'sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist'
+#alias mirrors 'sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist'
 
-# Help people new to Arch
-# alias apt 'man pacman'
-# alias apt-get 'man pacman'
-# alias please sudo
+# Help people from Debian new to Fedora
+#alias apt 'man dnf'
+#alias apt-get 'man dnf'
+#alias please sudo
 alias tb 'nc termbin.com 9999'
 alias helpme 'echo "To print basic information about a command use tldr <command>"'
 alias pacdiff 'sudo -H DIFFPROG=meld pacdiff'
@@ -189,14 +189,9 @@ set XDG_CACHE_HOME $HOME/.cache
 # Dotfiles management
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-alias expenses='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/ledger/expenses --work-tree=$HOME/ledger/expenses'
+#alias expenses='/usr/bin/git --git-dir=$HOME/MEGA/MEGAsync/Finances/ledger/expenses --work-tree=$HOME/ledger/expenses'
 
-# Ruby gems
-set -gx GEM_HOME = "$HOME/.local/share/gem/ruby/"
-set -gx PATH "$HOME/.local/share/gem/ruby/3.3" $PATH
+## Ruby gems
+#set -gx GEM_HOME = "$HOME/.local/share/gem/ruby/"
+#set -gx PATH "$HOME/.local/share/gem/ruby/3.3" $PATH
 
-if test -d ~/.qlot/bin
-    if not contains -- ~/.qlot/bin $PATH
-        set -p PATH ~/.qlot/bin
-    end
-end
