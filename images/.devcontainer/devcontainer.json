@@ -43,5 +43,14 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "dotnet restore",
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"customizations": {
+		"vscode": {
+		"extensions": [
+		],
+		"settings": {
+			"terminal.integrated.defaultProfile.linux": "fish"//,
+			//"ocaml.sandbox": "opam"
+		}
+	},
 	"remoteUser": "vscode"
 }

@@ -1,0 +1,1 @@
+docker build -t debian-base:latest --pull -f .\Dockerfile.debian-base .
