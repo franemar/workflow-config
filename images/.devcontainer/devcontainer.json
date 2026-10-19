@@ -46,6 +46,7 @@
 	"customizations": {
 		"vscode": {
 		"extensions": [
+			"nefrob.vscode-just-syntax"
 		],
 		"settings": {
 			"terminal.integrated.defaultProfile.linux": "fish"
