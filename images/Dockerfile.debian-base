@@ -15,4 +15,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && install_packages curl git fish rsync bubblewrap tar gzip \
     ca-certificates && update-ca-certificates
 
-SHELL ["/usr/bin/fish", "-c"]
+#SHELL ["/usr/bin/fish"]
