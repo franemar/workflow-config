@@ -46,6 +46,7 @@
 	"customizations": {
 		"vscode": {
 		"extensions": [
+			"nefrob.vscode-just-syntax",
 			"ocamllabs.ocaml-platform"//,
 		//	"redhat.vscode-yaml"
 		],
