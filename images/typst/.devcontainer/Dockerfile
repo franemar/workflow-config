@@ -11,10 +11,11 @@ RUN apk -U upgrade --no-cache && export ALPINE_FRONTEND=noninteractive
 
 RUN apk update --no-cache && export ALPINE_FRONTEND=noninteractive \
     && apk add --no-cache curl git fish rsync \
-    bubblewrap tar gzip ca-certificates \
+    bubblewrap tar gzip ca-certificates fontconfig \
     && apk add --no-cache typst typst-fish-completion \
-    && apk add --no-cache --virtual .brilliant-CV font-roboto \
-    font-source-sans font-awesome
+    && apk add --no-cache --virtual .brilliant-CV \
+    font-roboto font-source-sans font-awesome \
+    && fc-cache -fv
     # && rm -rf /var/lib/apt/lists/*
 
 
